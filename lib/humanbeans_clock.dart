@@ -378,8 +378,8 @@ class _HumanbeansClockState extends State<HumanbeansClock>
     // If it's the app first run the document holding the timestamp is not created.
     try {
       // Get the file.
-      final Directory directory = await getApplicationDocumentsDirectory();
-      final file = File('${directory.path}/birdTime.txt');
+      final directory = await getApplicationDocumentsDirectory();
+      final file = File('${directory?.path}/birdTime.txt');
 
       // Read the timestamp as string.
       final birdTime = await file.readAsString();
@@ -406,8 +406,8 @@ class _HumanbeansClockState extends State<HumanbeansClock>
   // Future that calculates the time for the next [_birdControls] animation and writes it in the filesystem, then resloves with the value.
   Future<DateTime> _setBirdTime() async {
     // Get the file.
-    final Directory directory = await getApplicationDocumentsDirectory();
-    final file = File('${directory.path}/birdTime.txt');
+    final directory = await getApplicationDocumentsDirectory();
+    final file = File('${directory?.path}/birdTime.txt');
 
     // Get the current time.
     final now = DateTime.now();
