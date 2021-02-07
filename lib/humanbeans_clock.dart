@@ -467,9 +467,9 @@ class _HumanbeansClockState extends State<HumanbeansClock>
   @override
   Widget build(BuildContext context) {
     // Calculate the String representations for the [_dateTime] and [_prevDateTime] values
-    final hours = DateFormat('h').format(_dateTime);
+    final hours = DateFormat('hh').format(_dateTime);
     final minutes = DateFormat('mm').format(_dateTime);
-    final prevHours = DateFormat('h').format(_prevTime);
+    final prevHours = DateFormat('hh').format(_prevTime);
     final prevMinutes = DateFormat('mm').format(_prevTime);
 
     // Format the [_dateTime] for screen readers
