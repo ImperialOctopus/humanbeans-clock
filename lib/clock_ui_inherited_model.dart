@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:humanbeans_clock/bird_controller.dart';
-import 'package:humanbeans_clock/utils_.dart';
+import 'package:humanbeans_clock/utils.dart';
 import 'package:flare_flutter/flare_controls.dart';
 import 'package:flutter/material.dart' hide Image;
 
