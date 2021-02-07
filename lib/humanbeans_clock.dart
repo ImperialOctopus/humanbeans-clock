@@ -114,7 +114,7 @@ class _HumanbeansClockState extends State<HumanbeansClock>
   /// The class calculates the ratio of the current device in comparison to
   /// a 480x800 dp device that was the base for the design. The ratio it's
   /// used to scale all the elements on the screen.
-  late final Utils _utils;
+  late Utils _utils;
 
   /// Index that designates which element the "Flighing off" animation should play on.
   ///
