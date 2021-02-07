@@ -3,35 +3,36 @@ import 'package:supernova_flutter_ui_toolkit/keyframes.dart';
 import 'clock_ui_inherited_model.dart';
 import 'numbers_animation.dart';
 
-// Widget that holds the numbers and animations for the clock face
+/// Widget that holds the numbers and animations for the clock face
 class ClockCounter extends StatelessWidget {
-  const ClockCounter({Key key}) : super(key: key);
+  /// Widget that holds the numbers and animations for the clock face
+  const ClockCounter({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // The split single numbers form the pairs of hours and minutes number
+    // The split single numbers from the pairs of hours and minutes number
     //
-    // We use them in a lot of places and i feel it's easeier to declare and asign it
+    // We use them in a lot of places and I feel it's easier to declare and assign it
     // here.
     Widget minutesOnes;
     Widget minutesTens;
     Widget hoursOnes;
     Widget hoursTens;
 
-    // The exit animation keyframes  for the numbers
+    // The exit animation keyframes for the numbers
     //
     // It's instantiated here to give access to the MediaQuery which we use to get
-    // he height of the screen, so that the numbers go off the screen
-    final List<Keyframe<double>> exitKeyframes = <Keyframe<double>>[
+    // the height of the screen, so that the numbers go off the screen
+    final exitKeyframes = <Keyframe<double>>[
       Keyframe<double>(fraction: 0, value: 0),
       Keyframe<double>(fraction: 1, value: -MediaQuery.of(context).size.height)
     ];
 
-    // The enter animation keyframes  for the numbers
+    // The enter animation keyframes for the numbers
     //
-    // It's declare it here to give access to the MediaQuery which we use to get
-    // he height of the screen, so that the numbers go off the screen
-    List<Keyframe<double>> enterKeyframes = <Keyframe<double>>[
+    // It's declared here to give access to the MediaQuery which we use to get
+    // the height of the screen, so that the numbers go off the screen
+    final enterKeyframes = <Keyframe<double>>[
       Keyframe<double>(fraction: 0, value: MediaQuery.of(context).size.height),
       Keyframe<double>(fraction: 1, value: 0)
     ];
@@ -40,16 +41,16 @@ class ClockCounter extends StatelessWidget {
     //
     // Doing it here will cause the entire widget to rebuild on each change in the
     // 'minutes' aspect of the model, but many of the widgets use it anyway
-    ClockUiInheritedModel model = ClockUiInheritedModel.of(context, 'minutes');
+    final model = ClockUiInheritedModel.of(context, 'minutes');
 
     // [TextStyle] for the clock's numbers
     //
     // We declare it here to use the [ClockUiInheritedModel]'s utils, to scale it
     // for the current screen
-    TextStyle style = TextStyle(
+    final style = TextStyle(
         fontFamily: 'HumanBeansBird',
-        fontSize: model.utils.scaleDimentions(159),
-        color: Color.fromRGBO(217, 136, 136, 1),
+        fontSize: model.utils.scaleDimensions(159),
+        color: const Color.fromRGBO(217, 136, 136, 1),
         decoration: TextDecoration.none,
         letterSpacing: 0,
         height: 2.5,
@@ -58,7 +59,8 @@ class ClockCounter extends StatelessWidget {
     if (model.clockAnimation.isAnimating &&
         model.prevMinutes.substring(1, 2) != model.minutes.substring(1, 2)) {
       // Declare the [Interval] both [AnimatedBuilders] will use
-      Interval minutesOnesIterval = Interval(0, 0.7, curve: Curves.easeOutQuad);
+      final minutesOnesIterval =
+          const Interval(0, 0.7, curve: Curves.easeOutQuad);
 
       minutesOnes = Stack(
         children: <Widget>[
@@ -99,8 +101,8 @@ class ClockCounter extends StatelessWidget {
     if (model.clockAnimation.isAnimating &&
         model.prevMinutes.substring(0, 1) != model.minutes.substring(0, 1)) {
       // Declare the [Interval] both [AnimatedBuilders] will use
-      Interval minutesTensInterval =
-          Interval(0.1, 0.8, curve: Curves.easeOutQuad);
+      final minutesTensInterval =
+          const Interval(0.1, 0.8, curve: Curves.easeOutQuad);
 
       minutesTens = Stack(children: <Widget>[
         NumbersAnimation(
@@ -139,8 +141,8 @@ class ClockCounter extends StatelessWidget {
     if (model.clockAnimation.isAnimating &&
         model.prevHours.substring(1, 2) != model.hours.substring(1, 2)) {
       // Declare the [Interval] both [AnimatedBuilders] will use
-      Interval hoursOnesInterval =
-          Interval(0.2, 0.90, curve: Curves.easeOutQuad);
+      final hoursOnesInterval =
+          const Interval(0.2, 0.90, curve: Curves.easeOutQuad);
 
       hoursOnes = Stack(
         children: <Widget>[
@@ -182,7 +184,8 @@ class ClockCounter extends StatelessWidget {
     if (model.clockAnimation.isAnimating &&
         model.prevHours.substring(0, 1) != model.hours.substring(0, 1)) {
       // Declare the [Interval] both [AnimatedBuilders] will use
-      Interval hoursTensInterval = Interval(0.3, 1, curve: Curves.easeOutQuad);
+      final hoursTensInterval =
+          const Interval(0.3, 1, curve: Curves.easeOutQuad);
 
       hoursTens = Stack(
         children: <Widget>[
@@ -222,24 +225,24 @@ class ClockCounter extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Padding(
-            padding: EdgeInsets.only(bottom: model.utils.scaleDimentions(20)),
+            padding: EdgeInsets.only(bottom: model.utils.scaleDimensions(20)),
             child: hoursTens),
         Padding(
-            padding: EdgeInsets.only(top: model.utils.scaleDimentions(40)),
+            padding: EdgeInsets.only(top: model.utils.scaleDimensions(40)),
             child: hoursOnes),
         SizedBox(
-          width: model.utils.scaleDimentions(60),
-          height: model.utils.scaleDimentions(80),
+          width: model.utils.scaleDimensions(60),
+          height: model.utils.scaleDimensions(80),
           child: Image.asset(
             'assets/images/Dots.png',
             fit: BoxFit.contain,
           ),
         ),
         Padding(
-            padding: EdgeInsets.only(bottom: model.utils.scaleDimentions(20)),
+            padding: EdgeInsets.only(bottom: model.utils.scaleDimensions(20)),
             child: minutesTens),
         Padding(
-            padding: EdgeInsets.only(top: model.utils.scaleDimentions(40)),
+            padding: EdgeInsets.only(top: model.utils.scaleDimensions(40)),
             child: minutesOnes),
       ],
     );
