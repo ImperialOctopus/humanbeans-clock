@@ -11,7 +11,7 @@ class Utils {
   Utils({BuildContext context}) : ratio = calculateRatio(context);
 
   // Scale given [size] by [this.ratio]
-  double scaleDimentions(double size) {
+  double scaleDimensions(double size) {
     return size * this.ratio;
   }
 }
