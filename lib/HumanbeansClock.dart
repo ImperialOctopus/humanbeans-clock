@@ -3,7 +3,7 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
 import 'package:humanbeans_clock/bird_animations.dart';
-import 'package:humanbeans_clock/BirdController.dart';
+import 'package:humanbeans_clock/bird_controller.dart';
 import 'package:humanbeans_clock/SceneLayout.dart';
 import 'package:humanbeans_clock/Utils.dart';
 import 'package:flare_flutter/flare_controls.dart';
