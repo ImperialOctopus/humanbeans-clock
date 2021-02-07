@@ -1,9 +1,9 @@
 import 'dart:ui';
-import 'package:humanbeans_clock/ClockUiInheritedModel.dart';
-import 'package:humanbeans_clock/LoadingScreen.dart';
-import 'package:humanbeans_clock/TexturePainter.dart';
+import 'package:humanbeans_clock/clock_ui_inherited_model.dart';
+import 'package:humanbeans_clock/loading_screen.dart';
+import 'package:humanbeans_clock/texture_painter.dart';
 import 'package:flutter/material.dart' hide Image;
-import 'LayersLayout.dart';
+import 'layers_layout.dart';
 
 // Class to wrap all the display widgets in [AspectRatio] and hold the [FutureBuilder].
 //

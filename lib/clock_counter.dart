@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:supernova_flutter_ui_toolkit/keyframes.dart';
-import 'ClockUiInheritedModel.dart';
-import 'NumbersAnimation.dart';
+import 'clock_ui_inherited_model.dart';
+import 'numbers_animation.dart';
 
 // Widget that holds the numbers and animations for the clock face
 class ClockCounter extends StatelessWidget {

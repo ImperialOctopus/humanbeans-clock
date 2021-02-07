@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:supernova_flutter_ui_toolkit/keyframes.dart';
 
-import 'BranchAnimation.dart';
-import 'ClockUiInheritedModel.dart';
-import 'Leaf.dart';
+import 'branch_animation.dart';
+import 'clock_ui_inherited_model.dart';
+import 'leaf.dart';
 
 /// Widget that holds the elements for the bottom left "branch"
 ///

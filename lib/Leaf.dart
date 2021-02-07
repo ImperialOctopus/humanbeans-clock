@@ -1,8 +1,8 @@
-import 'package:humanbeans_clock/ClockUiInheritedModel.dart';
+import 'package:humanbeans_clock/clock_ui_inherited_model.dart';
 import 'package:flutter/material.dart';
 import 'package:supernova_flutter_ui_toolkit/keyframes.dart';
-import 'BranchAnimation.dart';
-import 'LeafAnimation.dart';
+import 'branch_animation.dart';
+imp'leaf_animation.dart'dart';
 
 // Widget that wraps the leaf elements.
 //

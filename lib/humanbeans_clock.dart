@@ -4,14 +4,14 @@ import 'dart:math';
 import 'dart:typed_data';
 import 'package:humanbeans_clock/bird_animations.dart';
 import 'package:humanbeans_clock/bird_controller.dart';
-import 'package:humanbeans_clock/SceneLayout.dart';
-import 'package:humanbeans_clock/Utils.dart';
+import 'package:humanbeans_clock/scene_layout.dart';
+import 'package:humanbeans_clock/utils.dart';
 import 'package:flare_flutter/flare_controls.dart';
 import 'package:flutter/material.dart' hide Image;
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
-import 'ClockUiInheritedModel.dart';
+import 'clock_ui_inherited_model.dart';
 import 'dart:ui' as ui;
 
 // Widget that does time tracking and orchestrating of data and animations.
