@@ -1,9 +1,9 @@
-import 'package:clock/BottomLeftBranch.dart';
-import 'package:clock/BottomRightBranch.dart';
-import 'package:clock/ClockUiInheritedModel.dart';
-import 'package:clock/ClockCounter.dart';
-import 'package:clock/TopLeftBranch.dart';
-import 'package:clock/TopRightBranch.dart';
+import 'package:humanbeans_clock/BottomLeftBranch.dart';
+import 'package:humanbeans_clock/BottomRightBranch.dart';
+import 'package:humanbeans_clock/ClockUiInheritedModel.dart';
+import 'package:humanbeans_clock/ClockCounter.dart';
+import 'package:humanbeans_clock/TopLeftBranch.dart';
+import 'package:humanbeans_clock/TopRightBranch.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 

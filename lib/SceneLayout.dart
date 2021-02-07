@@ -1,7 +1,7 @@
 import 'dart:ui';
-import 'package:clock/ClockUiInheritedModel.dart';
-import 'package:clock/LoadingScreen.dart';
-import 'package:clock/TexturePainter.dart';
+import 'package:humanbeans_clock/ClockUiInheritedModel.dart';
+import 'package:humanbeans_clock/LoadingScreen.dart';
+import 'package:humanbeans_clock/TexturePainter.dart';
 import 'package:flutter/material.dart' hide Image;
 import 'LayersLayout.dart';
 

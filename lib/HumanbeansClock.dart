@@ -2,10 +2,10 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
-import 'package:clock/BirdAnimations.dart';
-import 'package:clock/BirdController.dart';
-import 'package:clock/SceneLayout.dart';
-import 'package:clock/Utils.dart';
+import 'package:humanbeans_clock/BirdAnimations.dart';
+import 'package:humanbeans_clock/BirdController.dart';
+import 'package:humanbeans_clock/SceneLayout.dart';
+import 'package:humanbeans_clock/Utils.dart';
 import 'package:flare_flutter/flare_controls.dart';
 import 'package:flutter/material.dart' hide Image;
 import 'package:flutter/services.dart';
@@ -24,12 +24,12 @@ import 'dart:ui' as ui;
 // Because the this widget rebuilds on each time change it's important that
 // the child of the InheritedModel is const to stop the propagination of
 // the rebuild.
-class Clock extends StatefulWidget {
+class HumanbeansClock extends StatefulWidget {
   @override
-  _ClockState createState() => _ClockState();
+  _HumanbeansClockState createState() => _HumanbeansClockState();
 }
 
-class _ClockState extends State<Clock>
+class _HumanbeansClockState extends State<HumanbeansClock>
     with TickerProviderStateMixin, WidgetsBindingObserver {
   /// The current time for the watch
   DateTime _dateTime;

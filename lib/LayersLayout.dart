@@ -1,5 +1,5 @@
-import 'package:clock/BranchesLayout.dart';
-import 'package:clock/ClockUiInheritedModel.dart';
+import 'package:humanbeans_clock/BranchesLayout.dart';
+import 'package:humanbeans_clock/ClockUiInheritedModel.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 

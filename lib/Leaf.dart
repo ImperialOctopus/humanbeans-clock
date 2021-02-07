@@ -1,4 +1,4 @@
-import 'package:clock/ClockUiInheritedModel.dart';
+import 'package:humanbeans_clock/ClockUiInheritedModel.dart';
 import 'package:flutter/material.dart';
 import 'package:supernova_flutter_ui_toolkit/keyframes.dart';
 import 'BranchAnimation.dart';
