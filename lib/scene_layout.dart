@@ -17,35 +17,31 @@ class SceneLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: AspectRatio(
-            aspectRatio: 5 / 3,
-            child: FutureBuilder(
-                // Subscibes to the 'iamgesFuture' to the [ClockUiInheritedModel]. Should't trigger
-                // rebuild.
-                future: ClockUiInheritedModel.of(context, 'imagesFuture')
-                    .imagesFuture,
-                // Resolves when the [dart:ui.Image] load
-                builder: (BuildContext c, AsyncSnapshot<List<Image>> snapshot) {
-                  // If the future has resolved
-                  if (snapshot.connectionState == ConnectionState.done &&
-                      snapshot.hasData) {
-                    return
-                        // Paint the textures over all the ui widgets
-                        // We use [CustomPaint] to get the [ColorBlend] mode for
-                        // the textures
-                        CustomPaint(
-                      foregroundPainter: TexturePainter(
-                        screenTexture: snapshot.data![0],
-                        multiplyTexture: snapshot.data![1],
-                      ),
-                      child: const LayersLayout(),
-                    );
-                    // If still loading
-                  } else {
-                    // Display the loading screen
-                    return const LoadingScreen();
-                  }
-                })));
+    return FutureBuilder(
+        // Subscibes to the 'iamgesFuture' to the [ClockUiInheritedModel]. Should't trigger
+        // rebuild.
+        future: ClockUiInheritedModel.of(context, 'imagesFuture').imagesFuture,
+        // Resolves when the [dart:ui.Image] load
+        builder: (BuildContext c, AsyncSnapshot<List<Image>> snapshot) {
+          // If the future has resolved
+          if (snapshot.connectionState == ConnectionState.done &&
+              snapshot.hasData) {
+            return
+                // Paint the textures over all the ui widgets
+                // We use [CustomPaint] to get the [ColorBlend] mode for
+                // the textures
+                CustomPaint(
+              foregroundPainter: TexturePainter(
+                screenTexture: snapshot.data![0],
+                multiplyTexture: snapshot.data![1],
+              ),
+              child: const LayersLayout(),
+            );
+            // If still loading
+          } else {
+            // Display the loading screen
+            return const LoadingScreen();
+          }
+        });
   }
 }
