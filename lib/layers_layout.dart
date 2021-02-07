@@ -1,13 +1,15 @@
-import 'package:humanbeans_clock/branches_layout.dart';
-import 'package:humanbeans_clock/clock_ui_inherited_model.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 
-// Class for stacking the [FlareActor] of the 'halo' effect of the bird on top of everything else.
-//
-// The idea is to have the blend mode on top of all widgets
+import 'branches_layout.dart';
+import 'clock_ui_inherited_model.dart';
+
+/// Class for stacking the [FlareActor] of the 'halo' effect of the bird on top of everything else.
+///
+/// The idea is to have the blend mode on top of all widgets
 class LayersLayout extends StatelessWidget {
-  const LayersLayout({Key key}) : super(key: key);
+  /// Class for stacking the [FlareActor] of the 'halo' effect of the bird on top of everything else.
+  const LayersLayout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
