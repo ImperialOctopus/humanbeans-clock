@@ -1,4 +1,4 @@
-import 'package:humanbeans_clock/BottomLeftBranch.dart';
+import 'package:humanbeans_clock/bottom_left_branch.dart';
 import 'package:humanbeans_clock/BottomRightBranch.dart';
 import 'package:humanbeans_clock/ClockUiInheritedModel.dart';
 import 'package:humanbeans_clock/ClockCounter.dart';
