@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+/// Screen shown while app is loading.
 class LoadingScreen extends StatelessWidget {
-  const LoadingScreen({Key key}) : super(key: key);
+  /// Screen shown while app is loading.
+  const LoadingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
