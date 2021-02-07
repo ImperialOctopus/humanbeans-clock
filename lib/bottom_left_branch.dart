@@ -23,8 +23,8 @@ class BottomLeftBranch extends StatelessWidget {
     final model = ClockUiInheritedModel.of(context, 'size');
 
     return SizedBox(
-      width: model.utils.scaleDimentions(320),
-      height: model.utils.scaleDimentions(270),
+      width: model.utils.scaleDimensions(320),
+      height: model.utils.scaleDimensions(270),
       child: BranchAnimation(
         animationController: model.idleAnimation,
         keyframes: <Keyframe<double>>[
@@ -36,8 +36,8 @@ class BottomLeftBranch extends StatelessWidget {
         transformOrigin: const FractionalOffset(0, 0.3),
         child: Stack(fit: StackFit.expand, children: <Widget>[
           Positioned(
-            left: model.utils.scaleDimentions(216),
-            bottom: model.utils.scaleDimentions(45),
+            left: model.utils.scaleDimensions(216),
+            bottom: model.utils.scaleDimensions(45),
             child: BranchAnimation(
               animationController: model.idleAnimation,
               keyframes: <Keyframe<double>>[
@@ -48,8 +48,8 @@ class BottomLeftBranch extends StatelessWidget {
               interval: const Interval(0, 1, curve: Curves.easeOutQuad),
               transformOrigin: const FractionalOffset(0.2, 1),
               child: Container(
-                width: model.utils.scaleDimentions(87),
-                height: model.utils.scaleDimentions(114),
+                width: model.utils.scaleDimensions(87),
+                height: model.utils.scaleDimensions(114),
                 child: Image.asset(
                   'assets/images/Pngs_Flat_0008_F_B_Left_2.png',
                 ),
@@ -60,8 +60,8 @@ class BottomLeftBranch extends StatelessWidget {
             bottom: 0,
             left: 0,
             child: Container(
-              width: model.utils.scaleDimentions(301),
-              height: model.utils.scaleDimentions(171),
+              width: model.utils.scaleDimensions(301),
+              height: model.utils.scaleDimensions(171),
               color: Colors.transparent,
               child: Image.asset('assets/images/Pngs_Flat_0007_F_B_Left.png',
                   fit: BoxFit.contain),
