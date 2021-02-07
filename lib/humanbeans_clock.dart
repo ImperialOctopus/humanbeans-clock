@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 import 'dart:math';
 import 'dart:ui' as ui;
 
@@ -7,7 +6,6 @@ import 'package:flare_flutter/flare_controls.dart';
 import 'package:flutter/material.dart' hide Image;
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:path_provider/path_provider.dart';
 
 import 'bird_animations.dart';
 import 'bird_controller.dart';
@@ -373,6 +371,7 @@ class _HumanbeansClockState extends State<HumanbeansClock>
     }
   }
 
+  /*  Replaced with non-filesystem solution to fix web errors.
   // Read the timestamp for the [_birdTime] form the file system and calcualte the [DateTime] and assign it to [_birdTime].
   void _getBirdTime() async {
     // If it's the app first run the document holding the timestamp is not created.
@@ -402,7 +401,7 @@ class _HumanbeansClockState extends State<HumanbeansClock>
       _birdTime = await _setBirdTime();
     }
   }
-
+  
   // Future that calculates the time for the next [_birdControls] animation and writes it in the filesystem, then resloves with the value.
   Future<DateTime> _setBirdTime() async {
     // Get the file.
@@ -429,6 +428,31 @@ class _HumanbeansClockState extends State<HumanbeansClock>
     // Resolve the Future with the value
     return nextBirdTime;
   }
+  */
+
+  void _getBirdTime() async {
+    _birdTime = await _setBirdTime();
+  }
+
+  // Future that calculates the time for the next [_birdControls] animation and writes it in the filesystem, then resloves with the value.
+  Future<DateTime> _setBirdTime() async {
+    // Get the current time.
+    final now = DateTime.now();
+
+    // Get the last midnight.
+    //
+    // We'll add a full day plus random time between 0 - 23 hours and 0 - 59 minutes
+    final lastMidnightTime = DateTime(now.year, now.month, now.day);
+
+    // Calculate random time during the next calendar day.
+    //
+    // We want to have a guarnateed one play for calendar day, to retain the
+    final nextBirdTime = lastMidnightTime.add(Duration(
+        days: 1, hours: Random().nextInt(24), minutes: Random().nextInt(60)));
+
+    // Resolve the Future with the value
+    return nextBirdTime;
+  }
 
   // Load the images for the texture effect from the file system
   //
@@ -443,9 +467,9 @@ class _HumanbeansClockState extends State<HumanbeansClock>
   @override
   Widget build(BuildContext context) {
     // Calculate the String representations for the [_dateTime] and [_prevDateTime] values
-    final hours = DateFormat('H').format(_dateTime);
+    final hours = DateFormat('h').format(_dateTime);
     final minutes = DateFormat('mm').format(_dateTime);
-    final prevHours = DateFormat('H').format(_prevTime);
+    final prevHours = DateFormat('h').format(_prevTime);
     final prevMinutes = DateFormat('mm').format(_prevTime);
 
     // Format the [_dateTime] for screen readers
